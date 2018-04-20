@@ -20,6 +20,9 @@ npm run build --report
 # run unit tests
 npm run unit
 
+# watch unit tests
+npm run unit:watch
+
 # run e2e tests
 npm run e2e
 
