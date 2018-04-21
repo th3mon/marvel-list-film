@@ -12,4 +12,11 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
+  data: {
+    message: 'test',
+  },
+});
+
+new Vue({
+  el: '#button',
 });

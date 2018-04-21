@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 <template>
   <div id="app">
     <img src="./assets/logo.png">
@@ -19,5 +21,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  max-width: 475px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 </style>
