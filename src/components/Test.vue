@@ -1,6 +1,6 @@
 <template>
-    <div id="matiTest">
-        <span> {{ message }} </span>
+    <div id="button">
+        <button v-once>{{message}}</button>
     </div>
 </template>
 

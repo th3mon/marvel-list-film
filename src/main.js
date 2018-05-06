@@ -16,7 +16,3 @@ new Vue({
     message: 'test',
   },
 });
-
-new Vue({
-  el: '#button',
-});
