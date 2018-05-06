@@ -1,22 +1,18 @@
 <template>
   <div class="app-content">
     <Menu></Menu>
-    <h2 v-once>{{appTitle}}</h2>
+    <AddMovie></AddMovie>
   </div>
 </template>
 
 <script>
 import Menu from './Menu';
+import AddMovie from './AddMovie'
 
 export default {
   name: 'HelloWorld',
   components: {
-    Menu,
-  },
-  data() {
-    return {
-      appTitle: "Marvel list app",
-    };
+    Menu, AddMovie
   }
 };
 </script>
@@ -26,6 +22,7 @@ export default {
 h1,
 h2 {
   font-weight: normal;
+  margin: 10px 0;
 }
 
 a {

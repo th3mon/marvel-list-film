@@ -1,6 +1,6 @@
 <template>
     <div id="button">
-        <button v-once>{{message}}</button>
+        
     </div>
 </template>
 

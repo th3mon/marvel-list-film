@@ -24,5 +24,13 @@ export default {
   margin: 0 auto;
   flex-flow: row wrap;
   justify-content: center;
+  padding: 0 15px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
 }
 </style>
