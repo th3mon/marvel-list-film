@@ -1,5 +1,5 @@
 <template>
-  <div id="menu" class="nav-top">
+  <div id='menu' class="nav-top">
       <h2 class="app-title" v-once>{{appTitle}}</h2>
     <div v-on:click="toggleClass" class="btn" v-bind:class="{active: isActive}">
       <span class="burger-icon"></span>
@@ -23,18 +23,18 @@
 
 <script>
 export default {
-  name: "Menu",
+  name: 'Menu',
   data() {
     return {
       isActive: false,
-      appTitle: "Marvel list film"
+      appTitle: 'Marvel list film',
     };
   },
   methods: {
     toggleClass() {
       this.isActive = !this.isActive;
-    }
-  }
+    },
+  },
 };
 </script>
 

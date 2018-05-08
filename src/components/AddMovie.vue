@@ -6,10 +6,7 @@
             +
         </a>
         <ul>
-            <li 
-                v-for="singleItem in listItems"
-                v-bind:key="singleItem.listItem"
-            >
+            <li v-for='singleItem in listItems' v-bind:key='singleItem.listItem'>
             <a href="#">
                 {{singleItem.listItem}}
             </a>
@@ -20,10 +17,10 @@
 
 <script>
 export default {
-  name: "AddMovie",
+  name: 'AddMovie',
   data() {
     return {
-      characterName: "",
+      characterName: '',
       listItems: [
 
       ],
@@ -32,9 +29,9 @@ export default {
   methods: {
     addCharacter(value, event) {
         event.preventDefault();
-        let inputValue = value;
-        let actualList = [this.$data.listItems];
-    }  
-  }
+        const inputValue = value;
+        const actualList = [this.$data.listItems];
+    },  
+  },
 };
 </script>

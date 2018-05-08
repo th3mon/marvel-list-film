@@ -7,13 +7,13 @@
 
 <script>
 import Menu from './Menu';
-import AddMovie from './AddMovie'
+import AddMovie from './AddMovie';
 
 export default {
   name: 'HelloWorld',
   components: {
-    Menu, AddMovie
-  }
+    Menu, AddMovie,
+  },
 };
 </script>
 
