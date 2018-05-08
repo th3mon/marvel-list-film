@@ -17,21 +17,19 @@
 
 <script>
 export default {
-  name: 'AddMovie',
+  name: "AddMovie",
   data() {
     return {
-      characterName: '',
-      listItems: [
-
-      ],
+      characterName: "",
+      listItems: []
     };
   },
   methods: {
     addCharacter(value, event) {
-        event.preventDefault();
-        const inputValue = value;
-        const actualList = [this.$data.listItems];
-    },  
-  },
+      event.preventDefault();
+      const inputValue = value;
+      const actualList = [this.$data.listItems];
+    },
+  }
 };
 </script>
