@@ -96,6 +96,10 @@ li {
   display: block;
 }
 
+.menu-content .menu-item:hover {
+  color: #E23636;
+}
+
 .btn {
   z-index: 1001;
 }
