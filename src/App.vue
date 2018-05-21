@@ -1,10 +1,14 @@
 import Vue from 'vue';
 
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <main id="app">
+    <header>
+      <h1>
+        Marvel List Film
+      </h1>
+    </header>
     <router-view/>
-  </div>
+  </main>
 </template>
 
 <script>
