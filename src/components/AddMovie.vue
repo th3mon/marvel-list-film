@@ -24,7 +24,6 @@ export default {
   name: "AddMovie",
   data() {
     return {
-      characterName: '',
       addItem: false,
       listItems: []
     };
@@ -32,10 +31,9 @@ export default {
   methods: {
     addCharacter(value) {
       event.preventDefault();
-      let characterName = this.characterName.length;
-      if (characterName > 0) {
+      if (this.characterName.length) {
         this.$data.listItems.push(value);
-        this.characterName = '';
+        this.characterName = "";
         this.$data.addItem = false;
       } else {
         this.$data.addItem = true;
@@ -45,8 +43,7 @@ export default {
 };
 </script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Marvel:400,700');
-
+@import url("https://fonts.googleapis.com/css?family=Marvel:400,700");
 .error-wrapper {
   transform: scale(0.1);
   opacity: 0;
@@ -77,7 +74,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  font-family: 'Marvel', sans-serif;
+  font-family: "Marvel", sans-serif;
 }
 
 .character-list li a {
@@ -89,7 +86,6 @@ export default {
 }
 
 .character-list li a:hover {
-  color: #E23636;
+  color: #e23636;
 }
-
 </style>

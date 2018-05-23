@@ -7,14 +7,9 @@
       <span class="burger-icon"></span>
     </div>
     <ul class="menu-content" v-bind:class="{active: isActive}">
-      <li>
+      <li v-for="single in menuItems" :key="single.menuItems">
         <a class="menu-item" href="#">
-          Home
-        </a>
-      </li>
-      <li>
-        <a class="menu-item" href="#">
-          Contact
+          {{single}}
         </a>
       </li>
     </ul>
@@ -28,6 +23,11 @@ export default {
     return {
       isActive: false,
       appTitle: 'Marvel list film',
+      menuItems: [
+        'Home',
+        'Contact',
+        'About us'
+      ]
     };
   },
   methods: {
