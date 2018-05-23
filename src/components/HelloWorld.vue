@@ -85,11 +85,14 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   data() {
     return {
-      headerMessage: "Todo listdasdasd",
+      headerMessage: "Todo listdasdasd"
     };
+    methods: {
+      downloadDate: () => {};
+    }
   }
 };
 </script>
