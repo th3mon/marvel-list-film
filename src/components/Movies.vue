@@ -1,24 +1,33 @@
 <template>
-  <h1>Movies</h1>
+  <h1 v-on:click="downloadDate">Movies</h1>
 </template>
 
 <script>
 export default {
-  name: 'Movies',
+  name: "Movies",
   movies: [],
   data() {
-    return {
-      fetch('api-url')
-        .then(resposne => resposne.json())
-        .then(movies => this.movies = movies);
-    };
+    return {};
   },
+  methods: {
+    downloadDate() {
+      const url = "http://localhost:8084/movies";
+      fetch(url)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(rejected => this.error());
+    },
+    error() {
+      console.log("nie udało się połączyć z bazą");
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {
