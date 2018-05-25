@@ -1,25 +1,41 @@
 <template>
-  <h1 v-on:click="downloadDate">Movies</h1>
+<div class="list-movies">
+  <h1>Movies</h1>
+  <ul class="movies">
+    <li class="single-box-wrapper" v-for="movie in movies" :key="movie.title">
+      <a href="#" class="content">
+        {{movie.title}}
+      </a>
+      </li>
+  </ul>
+</div>
 </template>
 
 <script>
 export default {
   name: "Movies",
-  movies: [],
   data() {
-    return {};
+    return {
+      movies: []
+    };
   },
   methods: {
     downloadDate() {
       const url = "http://localhost:8084/movies";
       fetch(url)
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(movies => {
+          console.log(movies);
+          this.$data.movies = movies;
+        })
         .catch(rejected => this.error());
     },
     error() {
       console.log("nie udało się połączyć z bazą");
     }
+  },
+  beforeMount() {
+    this.downloadDate();
   }
 };
 </script>
