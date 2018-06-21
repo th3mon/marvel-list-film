@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import * as config from '../../config/env.json';
+
 export default {
   name: 'Movies',
   data() {
@@ -31,8 +33,9 @@ export default {
     };
   },
   methods: {
-    downloadDate() {
-      const url = 'http://localhost:8084/movies';
+    downloadData() {
+      const url = `${config.api}movies`;
+
       fetch(url)
       const url = "http://localhost:8084/movies";
       fetch(url, {
@@ -43,7 +46,7 @@ export default {
     },
   },
   beforeMount() {
-    this.downloadDate();
+    this.downloadData();
   },
 };
 </script>
