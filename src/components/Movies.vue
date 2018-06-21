@@ -13,30 +13,27 @@
 
 <script>
 export default {
-  name: "Movies",
+  name: 'Movies',
   data() {
     return {
-      movies: []
+      movies: [],
     };
   },
   methods: {
     downloadDate() {
-      const url = "http://localhost:8084/movies";
+      const url = 'http://localhost:8084/movies';
       fetch(url)
         .then(response => response.json())
-        .then(movies => {
-          console.log(movies);
-          this.$data.movies = movies;
-        })
-        .catch(rejected => this.error());
+        .then((movies) => { this.$data.movies = movies; })
+        .catch(() => this.error());
     },
     error() {
-      console.log("nie udało się połączyć z bazą");
-    }
+      // console.log('nie udało się połączyć z bazą');
+    },
   },
   beforeMount() {
     this.downloadDate();
-  }
+  },
 };
 </script>
 
