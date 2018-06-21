@@ -4,14 +4,12 @@
   <ul class="movies">
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
       <div class="content">
-      <a href="#" class="content">
-        <span class="title">
-         {{movie.title}}
-        </span>
-      </a>
-      <p>
-        opis filmu
-      </p>
+        <a href="#" class="content">
+          <span class="title">
+           {{movie.title}}
+          </span>
+          <img :src="movie.picture" alt="">
+        </a>
       </div>
     </li>
   </ul>
