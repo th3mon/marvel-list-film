@@ -42,7 +42,7 @@ export default {
         method: "GET"
       })
         .then(response => response.json())
-        .then((movies) => { this.$data.movies = movies; })
+        .then((movies) => { this.$data.movies = movies; });
     },
   },
   beforeMount() {
