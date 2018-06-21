@@ -3,7 +3,7 @@ import Vue from 'vue';
 <template>
   <main id="app">
     <header>
-      <h1>
+      <h1 class="header">
         Marvel List Film
       </h1>
     </header>
@@ -19,7 +19,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -31,5 +31,8 @@ export default {
   margin: 0 auto;
   flex-flow: row wrap;
   justify-content: center;
+}
+* {
+  box-sizing: border-box;
 }
 </style>
