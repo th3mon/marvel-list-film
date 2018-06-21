@@ -35,4 +35,14 @@ export default {
 * {
   box-sizing: border-box;
 }
+
+@media(min-width: 1054px) {
+  #app {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: block;
+    padding: 0 30px;
+    width: 100%;
+  }
+}
 </style>

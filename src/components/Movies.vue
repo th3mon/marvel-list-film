@@ -1,26 +1,20 @@
 <template>
 <div class="list-movies">
   <h2 class="header">Movies</h2>
-  <ul class="movies" v-if="apiConnection">
+  <ul class="movies">
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
-      <div class="content" v-bind:style="{'background-image': 'url(' + movie.bgImage +')'}">
-      <a v-on:click="toggleClass($event)" v-bind:class="{active: isActive}" href="#" class="content">
+      <div class="content">
+      <a href="#" class="content">
         <span class="title">
          {{movie.title}}
         </span>
-        <span class="test">test</span>
       </a>
-      <p class="desc">
-        {{movie.description}}
+      <p>
+        opis filmu
       </p>
       </div>
-      </li>
+    </li>
   </ul>
-  <div class="error-wrapper" v-else>
-    <p class="text">
-      {{errorMessage}}
-    </p>
-  </div>
 </div>
 </template>
 
@@ -46,23 +40,7 @@ export default {
       })
         .then(response => response.json())
         .then((movies) => { this.$data.movies = movies; })
-        .catch(() => this.error());
-        .then(movies => {
-          this.$data.movies = movies;
-          this.$data.apiConnection = true;
-        })
-        .catch(rejected => this.error());
     },
-    error() {
-      // console.log('nie udało się połączyć z bazą');
-    },
-      this.$data.errorMessage = "Nie udało się połączyć z bazą";
-      this.$data.apiConnection = false;
-    },
-    toggleClass(event) {
-      event.preventDefault();
-      this.isActive = !this.isActive;
-    }
   },
   beforeMount() {
     this.downloadDate();
@@ -94,11 +72,17 @@ a {
   align-items: flex-start;
 }
 .single-box-wrapper {
-  flex: 0 0 50%;
-  max-width: 50%;
+  padding: 15px 10px;
+  height: 225px;
   margin: 0;
-  padding: 0 15px;
   display: block;
+}
+
+.single-box-wrapper .content {
+  display: block;
+  border: 0.5px solid #000;
+  height: 100%;
+  overflow: hidden;
 }
 
 .single-box-wrapper p {
@@ -112,24 +96,6 @@ a {
   text-decoration: none;
   color: #42b983;
   font-size: 14px;
-}
-
-@keyframes slideright {
-  0% {
-    right: 0;
-  }
-  100% {
-    right: -35px;
-  }
-}
-
-@keyframes sliderleft {
-  0% {
-    right: -35px;
-  }
-  100% {
-    right: 0;
-  }
 }
 
 .title {
@@ -153,4 +119,12 @@ a {
   display: inline-block;
   animation: slideright 1.5s forwards;
 }
+
+@media(min-width: 1200px) {
+  .single-box-wrapper {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
 </style>
