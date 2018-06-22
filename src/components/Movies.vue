@@ -5,10 +5,10 @@
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
       <div class="content">
         <a href="#" class="content">
+          <img :src="movie.picture" class="img-responsive" alt="">
           <span class="title">
-           {{movie.title}}
+            {{movie.title}}
           </span>
-          <img :src="movie.picture" alt="">
         </a>
       </div>
     </li>

@@ -36,6 +36,11 @@ export default {
   box-sizing: border-box;
 }
 
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 @media(min-width: 1054px) {
   #app {
     max-width: 1024px;
