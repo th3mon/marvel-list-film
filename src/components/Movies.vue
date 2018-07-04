@@ -1,15 +1,13 @@
 <template>
 <div class="list-movies">
-  <h2 class="header">Movies</h2>
+  <h2 class="header">{{pageTitle}}</h2>
   <ul class="movies">
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
       <div class="content">
-        <a href="#" class="content">
           <img :src="movie.picture" class="img-responsive" alt="">
-          <span class="title">
+        <router-link class="title" :to="{name: 'SingleMovie', params: {id: movie.id, title: movie.title, description: movie.description, picture: movie.picture}}">
             {{movie.title}}
-          </span>
-        </a>
+        </router-link>
       </div>
     </li>
   </ul>
@@ -17,6 +15,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import * as config from '../../config/env.json';
 
 export default {
@@ -24,28 +23,25 @@ export default {
   data() {
     return {
       movies: [],
-      movies: [],
-      isActive: false,
-      apiConnection: null,
-      errorMessage: null
+      pageTitle: 'List of movies'
     };
   },
   methods: {
     downloadData() {
       const url = `${config.api}movies`;
-
       fetch(url)
       const url = "http://localhost:8084/movies";
       fetch(url, {
         method: "GET"
       })
         .then(response => response.json())
-        .then((movies) => { this.$data.movies = movies; });
+        .then((movies) => { this.$data.movies = movies; })
+        console.log(this);
     },
   },
   beforeMount() {
     this.downloadData();
-  },
+  }
 };
 </script>
 
@@ -74,8 +70,20 @@ a {
 }
 .single-box-wrapper {
   padding: 15px 10px;
-  height: 225px;
   margin: 0;
+  display: block;
+}
+
+.single-box-wrapper img {
+  max-width: 35px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.single-box-wrapper a {
+  width: 100%;
+  height: 100%;
   display: block;
 }
 
@@ -83,7 +91,7 @@ a {
   display: block;
   border: 0.5px solid #000;
   height: 100%;
-  overflow: hidden;
+  background: #e23636;
 }
 
 .single-box-wrapper p {
@@ -95,13 +103,12 @@ a {
 
 .single-box-wrapper a {
   text-decoration: none;
-  color: #42b983;
+  color: #00B233;
   font-size: 14px;
 }
 
 .title {
   display: inline-block;
-  background: #fff;
   position: relative;
   z-index: 2;
 }
