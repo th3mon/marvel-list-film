@@ -6,7 +6,6 @@ import Vue from 'vue';
       <h1 class="header">
         Marvel List Film
       </h1>
-      <router-link to="/">test</router-link>
     </header>
     <router-view/>
   </main>

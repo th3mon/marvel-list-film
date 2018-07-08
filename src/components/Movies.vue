@@ -35,8 +35,7 @@ export default {
         method: "GET"
       })
         .then(response => response.json())
-        .then((movies) => { this.$data.movies = movies; })
-        console.log(this);
+        .then((movies) => { this.$data.movies = movies; });
     },
   },
   beforeMount() {

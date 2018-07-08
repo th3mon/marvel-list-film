@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Movies from '@/components/Movies';
-import SingleMovie from '@/components/Single-movie';
+import Movie from '@/components/Movie';
 
 Vue.use(Router);
 
@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/movies/:id',
       name: 'SingleMovie',
-      component: SingleMovie,
+      component: Movie,
       props: true,
     },
   ],
