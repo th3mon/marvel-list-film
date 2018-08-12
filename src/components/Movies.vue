@@ -5,7 +5,8 @@
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
       <div class="content">
           <img :src="movie.picture" class="img-responsive" alt="">
-        <router-link class="title" :to="{name: 'SingleMovie', params: {id: movie.id, title: movie.title, description: movie.description, picture: movie.picture}}">
+        <router-link class="title" 
+        :to="{name: 'SingleMovie', params: {id: movie.id, title: movie.title, description: movie.description, picture: movie.picture}}">
             {{movie.title}}
         </router-link>
       </div>
@@ -15,7 +16,6 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import * as config from '../../config/env.json';
 
 export default {
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       movies: [],
-      pageTitle: 'List of movies'
+      pageTitle: 'List of movies',
     };
   },
   methods: {
@@ -40,7 +40,7 @@ export default {
   },
   beforeMount() {
     this.downloadData();
-  }
+  },
 };
 </script>
 

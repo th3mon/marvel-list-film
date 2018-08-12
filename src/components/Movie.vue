@@ -14,10 +14,8 @@
 </template>
 
 <script>
-import * as config from "../../config/env.json";
-
 export default {
-  name: "Movie",
+  name: 'Movie',
   props: ['id', 'title', 'description', 'picture']
 };
 </script>
