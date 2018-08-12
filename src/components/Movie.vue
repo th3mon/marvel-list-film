@@ -1,14 +1,14 @@
 <template>
     <div class="single-movie">
       <div class="image">
-        <img :src="picture" alt="">
+        <img :src="movie.picture" alt="">
       </div>
       <h2 class="title">
-        {{title}}
+        {{movie.title}}
       </h2>
       <div class="info">
         About:
-        {{description}}
+        {{movie.description}}
       </div>
     </div>
 </template>
@@ -16,6 +16,6 @@
 <script>
 export default {
   name: 'Movie',
-  props: ['id', 'title', 'description', 'picture']
+  props: ['id', 'movie'],
 };
 </script>
