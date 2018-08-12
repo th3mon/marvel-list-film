@@ -5,8 +5,7 @@
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
       <div class="content">
           <img :src="movie.picture" class="img-responsive" alt="">
-        <router-link class="title" 
-        :to="{name: 'SingleMovie', params: {id: movie.id, title: movie.title, description: movie.description, picture: movie.picture}}">
+        <router-link class="title" :to="{name: 'SingleMovie', params: {id: movie.id, title: movie.title, description: movie.description, picture: movie.picture}}">
             {{movie.title}}
         </router-link>
       </div>
