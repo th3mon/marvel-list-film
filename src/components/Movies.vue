@@ -34,7 +34,21 @@ export default {
         method: "GET"
       })
         .then(response => response.json())
-        .then((movies) => { this.$data.movies = movies; });
+        .then((movies) => {
+          this.$data.movies = movies;
+        });
+    },
+    cutText() {
+      const textWrap = document.getElementsByClassName('text');
+      if (document.readyState === 'complete') {
+        document.addEventListener(
+          'DOMContentLoaded',
+          () => {
+            Array.from(textWrap);
+          },
+          false,
+        );
+      }
     },
   },
   beforeMount() {
