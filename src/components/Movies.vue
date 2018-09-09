@@ -3,12 +3,19 @@
   <h2 class="header">{{pageTitle}}</h2>
   <ul class="movies">
     <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
-      <div class="content">
-        <img :src="movie.picture" class="img-responsive" alt="">
-        <router-link class="title" :to="{ name: 'SingleMovie', params: {id: movie.id, movie} }">
-          {{movie.title}}
-        </router-link>
-      </div>
+        <div class="inner">
+          <router-link class="img-wrapper" :to="{ name: 'SingleMovie', params: {id: movie.id, movie}}">
+            <img :src="movie.picture" class="img-responsive" alt="">
+          </router-link>
+          <div class="content">
+            <router-link class="title main-color" :to="{ name: 'SingleMovie', params: {id: movie.id, movie} }">
+                {{movie.title}}
+            </router-link>
+            <div class="text secondary-color">
+              {{movie.description | truncate(75)}}
+            </div>
+          </div>
+        </div>
     </li>
   </ul>
 </div>
@@ -38,16 +45,13 @@ export default {
           this.$data.movies = movies;
         });
     },
-    cutText() {
-      const textWrap = document.getElementsByClassName('text');
-      if (document.readyState === 'complete') {
-        document.addEventListener(
-          'DOMContentLoaded',
-          () => {
-            Array.from(textWrap);
-          },
-          false,
-        );
+  },
+  filters: {
+    truncate(value, length) {
+      if (value && value.length > length) {
+        return `${value.slice(0, length)} ... `;
+      } else {
+        return value;
       }
     },
   },
