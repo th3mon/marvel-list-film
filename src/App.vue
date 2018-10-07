@@ -4,7 +4,7 @@ import Vue from 'vue';
   <main id="app">
     <header>
       <h1 class="header">
-        Marvel List Film
+        {{pageHeader}}
       </h1>
     </header>
     <router-view/>
@@ -14,6 +14,11 @@ import Vue from 'vue';
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      pageHeader: 'Marvel List Film',
+    };
+  },
 };
 </script>
 
