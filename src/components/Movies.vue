@@ -50,11 +50,7 @@ export default {
   },
   filters: {
     truncate(value, length) {
-      if (value && value.length > length) {
-        return `${value.slice(0, length)} ... `;
-      } else {
-        return value;
-      }
+      return value.length > length ? `${value.slice(0, length)} ...` : value;
     },
   },
   beforeMount() {
