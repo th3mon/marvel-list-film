@@ -1,24 +1,26 @@
 <template>
-<div class="list-movies">
-  <h2 class="header">{{pageTitle}}</h2>
-  <ul class="movies">
-    <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
+  <div class="list-movies">
+    <h2 class="header">{{pageTitle}}</h2>
+    <ul class="movies">
+      <li class="single-box-wrapper" v-for="movie in movies" :key="movie.id">
         <div class="inner">
-          <router-link class="img-wrapper" :to="{ name: 'SingleMovie', params: {id: movie.id, movie}}">
+          <router-link class="img-wrapper"
+          :to="{ name: 'SingleMovie', params: {id: movie.id, movie}}">
             <img :src="movie.picture" class="img-responsive" alt="">
           </router-link>
           <div class="content">
-            <router-link class="title main-color" :to="{ name: 'SingleMovie', params: {id: movie.id, movie} }">
-                {{movie.title}}
+            <router-link class="title main-color"
+            :to="{ name: 'SingleMovie', params: {id: movie.id, movie} }">
+              {{movie.title}}
             </router-link>
             <div class="text secondary-color">
               {{movie.description | truncate(75)}}
             </div>
           </div>
         </div>
-    </li>
-  </ul>
-</div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
