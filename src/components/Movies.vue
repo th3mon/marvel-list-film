@@ -87,6 +87,10 @@ a {
   display: block;
 }
 
+.single-box-wrapper .inner {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
 .single-box-wrapper img {
   max-width: 35px;
   height: auto;
